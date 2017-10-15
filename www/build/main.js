@@ -30,27 +30,27 @@ var map = {
 		11
 	],
 	"../pages/item-create/item-create.module": [
-		308,
+		307,
 		10
 	],
 	"../pages/item-detail/item-detail.module": [
-		307,
+		309,
 		9
 	],
 	"../pages/list-master/list-master.module": [
-		310,
+		308,
 		8
 	],
 	"../pages/login/login.module": [
-		309,
+		311,
 		7
 	],
 	"../pages/menu/menu.module": [
-		312,
+		310,
 		6
 	],
 	"../pages/search/search.module": [
-		311,
+		312,
 		5
 	],
 	"../pages/settings/settings.module": [
@@ -114,7 +114,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var Api = (function () {
     function Api(http) {
         this.http = http;
-        this.url = 'https://example.com/api/v1';
+        this.url = 'https://dev.api.weezyu.com';
     }
     Api.prototype.get = function (endpoint, params, reqOpts) {
         if (!reqOpts) {
@@ -147,9 +147,10 @@ var Api = (function () {
 }());
 Api = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["B" /* Injectable */])(),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]) === "function" && _a || Object])
 ], Api);
 
+var _a;
 //# sourceMappingURL=api.js.map
 
 /***/ }),
@@ -377,12 +378,12 @@ AppModule = __decorate([
                 links: [
                     { loadChildren: '../pages/cards/cards.module#CardsPageModule', name: 'CardsPage', segment: 'cards', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/content/content.module#ContentPageModule', name: 'ContentPage', segment: 'content', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/item-detail/item-detail.module#ItemDetailPageModule', name: 'ItemDetailPage', segment: 'item-detail', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/item-create/item-create.module#ItemCreatePageModule', name: 'ItemCreatePage', segment: 'item-create', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/list-master/list-master.module#ListMasterPageModule', name: 'ListMasterPage', segment: 'list-master', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/search/search.module#SearchPageModule', name: 'SearchPage', segment: 'search', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/item-detail/item-detail.module#ItemDetailPageModule', name: 'ItemDetailPage', segment: 'item-detail', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/menu/menu.module#MenuPageModule', name: 'MenuPage', segment: 'menu', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/search/search.module#SearchPageModule', name: 'SearchPage', segment: 'search', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/settings/settings.module#SettingsPageModule', name: 'SettingsPage', segment: 'settings', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/tabs/tabs.module#TabsPageModule', name: 'TabsPage', segment: 'tabs', priority: 'low', defaultHistory: [] },
@@ -581,7 +582,7 @@ var User = (function () {
      */
     User.prototype.login = function (accountInfo) {
         var _this = this;
-        var seq = this.api.post('login', accountInfo).share();
+        var seq = this.api.post('auth/basic', accountInfo).share();
         seq.subscribe(function (res) {
             // If the API returned a successful response, mark the user as logged in
             if (res.status == 'success') {
@@ -600,7 +601,7 @@ var User = (function () {
      */
     User.prototype.signup = function (accountInfo) {
         var _this = this;
-        var seq = this.api.post('signup', accountInfo).share();
+        var seq = this.api.post('users', accountInfo).share();
         seq.subscribe(function (res) {
             // If the API returned a successful response, mark the user as logged in
             if (res.status == 'success') {
