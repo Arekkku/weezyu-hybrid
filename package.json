@@ -30,6 +30,7 @@
     "@ngx-translate/http-loader": "^2.0.0",
     "autoprefixer": "^7.1.5",
     "cordova": "^7.1.0",
+    "cordova-android": "^6.2.3",
     "ionic": "^3.13.0",
     "ionic-angular": "3.7.1",
     "ionicons": "3.0.0",

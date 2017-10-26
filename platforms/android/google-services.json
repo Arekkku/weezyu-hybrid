@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "449043112780",
+    "firebase_url": "https://weezyu-hybrid.firebaseio.com",
+    "project_id": "weezyu-hybrid",
+    "storage_bucket": "weezyu-hybrid.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:449043112780:android:764d2cb7da3280eb",
+        "android_client_info": {
+          "package_name": "io.ionic.starter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "449043112780-bgl2vpcerlnu9i80octqh2jncno88hgp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9TdJn4jDS140u_rC7j39vcgUym1UVHlc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
