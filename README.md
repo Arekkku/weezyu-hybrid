@@ -10,7 +10,7 @@ Ainsi cette application va avoir comme fonctionnalité le fait de pouvoir se con
 
 ## Table des matières
 
-1. Authentification(#getting-started)
+1. Authentification
 2. Contacts
 3. Recherche
 4. Tchat
