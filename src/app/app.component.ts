@@ -40,9 +40,11 @@ export class MyApp {
     { title: 'Signup', component: 'SignupPage' },
     { title: 'Friends', component: 'ListFriendPage' },
     { title: 'Menu', component: 'MenuPage' },
-    { title: 'Search', component: 'SearchPage' },
-    { title: 'Conv Detail', component: 'ListConvPage' }
-  ]
+    { title: 'Search', component: 'SearchFriendsPage' },
+    { title: 'Conv Detail', component: 'ListConvPage' },
+    { title: 'List Pending', component: 'ListPendingPage' },
+    { title: 'Item Conv', component: 'ItemConvPage' }
+    ]
 
   constructor(private translate: TranslateService, platform: Platform, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen) {
     platform.ready().then(() => {

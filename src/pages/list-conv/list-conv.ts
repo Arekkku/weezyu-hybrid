@@ -4,6 +4,7 @@ import { IonicPage, ModalController, NavController, ToastController } from 'ioni
 import { Item } from '../../models/item';
 import { Items } from '../../providers/providers';
 import { User } from '../../providers/providers';
+import * as Enums from '../search-friends/search-friends';
 
 
 @IonicPage()
@@ -56,6 +57,17 @@ export class ListConvPage {
     this.items.delete(item);
   }
 
+createConversation(){
+  this.navCtrl.push('SearchFriendsPage', {
+    type: Enums.Type.Conversations
+  });
+}
+
+openConversation(id: string){
+  this.navCtrl.push('ItemConvPage', {
+    item: id
+  });
+}
   /**
    * Navigate to the detail page for this item.
    */

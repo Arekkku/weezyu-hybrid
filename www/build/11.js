@@ -1,15 +1,15 @@
 webpackJsonp([11],{
 
-/***/ 305:
+/***/ 308:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContentPageModule", function() { return ContentPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ItemConvPageModule", function() { return ItemConvPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__ = __webpack_require__(112);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__content__ = __webpack_require__(318);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__item_conv__ = __webpack_require__(323);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -20,37 +20,38 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var ContentPageModule = /** @class */ (function () {
-    function ContentPageModule() {
+var ItemConvPageModule = /** @class */ (function () {
+    function ItemConvPageModule() {
     }
-    ContentPageModule = __decorate([
+    ItemConvPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_3__content__["a" /* ContentPage */],
+                __WEBPACK_IMPORTED_MODULE_3__item_conv__["a" /* ItemConvPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__content__["a" /* ContentPage */]),
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__item_conv__["a" /* ItemConvPage */]),
                 __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__["b" /* TranslateModule */].forChild()
             ],
             exports: [
-                __WEBPACK_IMPORTED_MODULE_3__content__["a" /* ContentPage */]
+                __WEBPACK_IMPORTED_MODULE_3__item_conv__["a" /* ItemConvPage */]
             ]
         })
-    ], ContentPageModule);
-    return ContentPageModule;
+    ], ItemConvPageModule);
+    return ItemConvPageModule;
 }());
 
-//# sourceMappingURL=content.module.js.map
+//# sourceMappingURL=item-conv.module.js.map
 
 /***/ }),
 
-/***/ 318:
+/***/ 323:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContentPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ItemConvPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_providers__ = __webpack_require__(113);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -62,20 +63,44 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-var ContentPage = /** @class */ (function () {
-    function ContentPage(navCtrl) {
+
+
+var ItemConvPage = /** @class */ (function () {
+    function ItemConvPage(navCtrl, items, modalCtrl, user, toastCtrl, navParams) {
         this.navCtrl = navCtrl;
+        this.items = items;
+        this.modalCtrl = modalCtrl;
+        this.user = user;
+        this.toastCtrl = toastCtrl;
+        this.navParams = navParams;
+        this.id = navParams.get("id");
     }
-    ContentPage = __decorate([
+    ItemConvPage.prototype.ionViewDidLoad = function () {
+        var _this = this;
+        this.user.getConversationid(this.id).subscribe(function (resp) {
+            console.log(resp);
+            _this.item = resp;
+        }, function (err) {
+            //this.navCtrl.push(MainPage);
+            // Unable to log in
+            var toast = _this.toastCtrl.create({
+                message: "Erreur à la recuperation des conversations",
+                duration: 3000,
+                position: 'top'
+            });
+            toast.present();
+        });
+    };
+    ItemConvPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-content',template:/*ion-inline-start:"C:\Users\a.chenevier\Documents\weezyu-hybrid\src\pages\content\content.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Content\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <p>\n\n    This is a perfect starting point for a page with primarily text content. The body is padded nicely and ready for prose.\n\n  </p>\n\n</ion-content>'/*ion-inline-end:"C:\Users\a.chenevier\Documents\weezyu-hybrid\src\pages\content\content.html"*/
+            selector: 'page-item-conv',template:/*ion-inline-start:"C:\Users\a.chenevier\Documents\weezyu-hybrid\src\pages\item-conv\item-conv.html"*/'<!--\n\n  Generated template for the Chat page.\n\n  See http://ionicframework.com/docs/v2/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n    <ion-navbar>\n\n        <ion-title>{{toUser.name}}</ion-title>\n\n    </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content>\n\n\n\n    <div class="message-wrap">\n\n\n\n        <div *ngFor="let msg of msgList"\n\n             class="message"\n\n             [class.left]=" msg.userId === toUser.id "\n\n             [class.right]=" msg.userId === user.id ">\n\n            <img class="user-img" [src]="msg.userAvatar" alt="" src="">\n\n            <ion-spinner name="dots" *ngIf="msg.status === \'pending\'"></ion-spinner>\n\n            <div class="msg-detail">\n\n                <div class="msg-info">\n\n                    <p>\n\n                        {{msg.userName}}&nbsp;&nbsp;&nbsp;{{msg.time | relativeTime}}</p>\n\n                </div>\n\n                <div class="msg-content">\n\n                    <span class="triangle"></span>\n\n                    <p class="line-breaker ">{{msg.message}}</p>\n\n                </div>\n\n            </div>\n\n        </div>\n\n\n\n    </div>\n\n\n\n</ion-content>\n\n\n\n<ion-footer no-border [style.height]="showEmojiPicker ? \'255px\' : \'55px\'">\n\n    <ion-grid class="input-wrap">\n\n        <ion-row>\n\n            <ion-col col-2>\n\n                <button ion-button clear icon-only item-right (click)="switchEmojiPicker()">\n\n                    <ion-icon name="md-happy"></ion-icon>\n\n                </button>\n\n            </ion-col>\n\n            <ion-col col-8>\n\n                <ion-textarea #chat_input\n\n                              placeholder="Text Input"\n\n                              [(ngModel)]="editorMsg"\n\n                              (keyup.enter)="sendMsg()"\n\n                              (focus)="onFocus()">\n\n                </ion-textarea>\n\n            </ion-col>\n\n            <ion-col col-2>\n\n                <button ion-button clear icon-only item-right (click)="sendMsg()">\n\n                    <ion-icon name="ios-send" ios="ios-send" md="md-send"></ion-icon>\n\n                </button>\n\n            </ion-col>\n\n        </ion-row>\n\n    </ion-grid>\n\n    <emoji-picker *ngIf="showEmojiPicker" [(ngModel)]="editorMsg"></emoji-picker>\n\n</ion-footer>\n\n'/*ion-inline-end:"C:\Users\a.chenevier\Documents\weezyu-hybrid\src\pages\item-conv\item-conv.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]])
-    ], ContentPage);
-    return ContentPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_providers__["b" /* Items */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */], __WEBPACK_IMPORTED_MODULE_2__providers_providers__["c" /* User */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
+    ], ItemConvPage);
+    return ItemConvPage;
 }());
 
-//# sourceMappingURL=content.js.map
+//# sourceMappingURL=item-conv.js.map
 
 /***/ })
 

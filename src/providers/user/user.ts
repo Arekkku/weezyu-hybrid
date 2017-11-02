@@ -1,5 +1,5 @@
 import 'rxjs/add/operator/toPromise';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpParams } from '@angular/common/http';
 import {HttpHeaders} from '@angular/common/http';
 
 
@@ -115,6 +115,102 @@ export class User {
       headers: new HttpHeaders().set("Authorization", this.token)
     };
     let seq = this.api.get('conversations/users/me', params, reqOpts);
+    seq.subscribe((res: any) => {
+      console.log(res);
+
+      // If the API returned a successful response, mark the user as logged in
+
+    }, err => {
+      console.error('ERROR', err);
+    });
+
+    return seq;
+  }
+
+  search(params: any){
+    let reqOpts = {
+      params: new HttpParams(),
+      headers: new HttpHeaders().set("Authorization", this.token)
+    };
+    let seq = this.api.get('users/search', params, reqOpts);
+    seq.subscribe((res: any) => {
+      console.log(res);
+      // If the API returned a successful response, mark the user as logged in
+    }, err => {
+      console.error('ERROR', err);
+    });
+
+    return seq;
+  }
+
+  addFriend(params: string){
+    let reqOpts = {
+      headers: new HttpHeaders().set("Authorization", this.token)
+    };
+    let seq = this.api.post('users/me/friends/', {"friend_id": params}, reqOpts).share();
+    seq.subscribe((res: any) => {
+      console.log(res);
+      // If the API returned a successful response, mark the user as logged in
+    }, err => {
+      console.error('ERROR', err);
+    });
+
+    return seq;
+  }
+
+  createConversation(params: string){
+//    let array : Array<string> = [params];
+    let reqOpts = {
+      headers: new HttpHeaders().set("Authorization", this.token)
+    };
+    let seq = this.api.post('conversations', {"users": params}, reqOpts).share();
+    seq.subscribe((res: any) => {
+      console.log(res);
+      // If the API returned a successful response, mark the user as logged in
+    }, err => {
+      console.error('ERROR', err);
+    });
+
+    return seq;
+  }
+
+  acceptFriendRequest(params: string){
+    let reqOpts = {
+      headers: new HttpHeaders().set("Authorization", this.token)
+    };
+    let seq = this.api.post('users/me/friends', {"friend_id": params}, reqOpts).share();
+    seq.subscribe((res: any) => {
+      console.log(res);
+      // If the API returned a successful response, mark the user as logged in
+    }, err => {
+      console.error('ERROR', err);
+    });
+
+    return seq;
+  }
+
+  declineFriendRequest(params: string){
+    let reqOpts = {
+      headers: new HttpHeaders().set("Authorization", this.token),
+      body: {"friend_id": params}
+    };
+    let seq = this.api.delete('users/me/friends/', reqOpts).share();
+    seq.subscribe((res: any) => {
+      console.log(res);
+      // If the API returned a successful response, mark the user as logged in
+    }, err => {
+      console.error('ERROR', err);
+    });
+
+    return seq;
+  }
+
+  getConversationid(params: string){
+    let reqOpts = {
+      params: new HttpParams(),
+      headers: new HttpHeaders().set("Authorization", this.token)
+    };
+    let seq = this.api.get('conversations/me/' + params, params, reqOpts);
     seq.subscribe((res: any) => {
       console.log(res);
 

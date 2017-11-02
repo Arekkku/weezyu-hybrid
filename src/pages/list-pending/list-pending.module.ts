@@ -2,18 +2,18 @@ import { NgModule } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { IonicPageModule } from 'ionic-angular';
 
-import { SearchPage } from './search';
+import { ListPendingPage } from './list-pending';
 
 @NgModule({
   declarations: [
-    SearchPage,
+    ListPendingPage,
   ],
   imports: [
-    IonicPageModule.forChild(SearchPage),
+    IonicPageModule.forChild(ListPendingPage),
     TranslateModule.forChild()
   ],
   exports: [
-    SearchPage
+    ListPendingPage
   ]
 })
-export class SearchPageModule { }
+export class ListPendingPageModule { }

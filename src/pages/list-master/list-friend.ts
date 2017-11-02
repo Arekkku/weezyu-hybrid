@@ -4,6 +4,7 @@ import { IonicPage, ModalController, NavController, ToastController } from 'ioni
 import { Item } from '../../models/item';
 import { Items } from '../../providers/providers';
 import { User } from '../../providers/providers';
+import * as Enums from '../search-friends/search-friends';
 
 @IonicPage()
 @Component({
@@ -23,7 +24,7 @@ export class ListFriendPage {
     this.user.getFriends("").subscribe((resp) => {
       if (resp != null)
       {
-      this.currentItems = resp.friends;
+      this.currentItems = resp['friends'];
     }
     }, (err) => {
     //this.navCtrl.push(MainPage);
@@ -58,6 +59,11 @@ export class ListFriendPage {
     this.items.delete(item);
   }
 
+  addFriend(){
+    this.navCtrl.push('SearchFriendsPage', {
+      type: Enums.Type.Friend
+    });
+  }
   /**
    * Navigate to the detail page for this item.
    */

@@ -25512,6 +25512,155 @@ ion-navbar.toolbar {
   min-height: calc(46px + constant(safe-area-inset-top));
 }
 
+page-item-conv ion-content .scroll-content {
+  background-color: #f5f5f5;
+}
+
+page-item-conv ion-footer {
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.11);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.11);
+  background-color: #fff;
+  height: 255px;
+}
+
+page-item-conv .line-breaker {
+  white-space: pre-line;
+}
+
+page-item-conv .input-wrap {
+  padding: 0 5px;
+}
+
+page-item-conv .input-wrap ion-textarea {
+  position: static;
+}
+
+page-item-conv .input-wrap ion-col.col {
+  padding: 0;
+}
+
+page-item-conv .input-wrap button {
+  width: 100%;
+  height: 55px;
+  font-size: 1.3em;
+  margin: 0;
+}
+
+page-item-conv .input-wrap textarea {
+  border-bottom: 1px #387ef5;
+  border-style: solid;
+}
+
+page-item-conv .message-wrap {
+  padding: 0 10px;
+}
+
+page-item-conv .message-wrap .message {
+  position: relative;
+  padding: 7px 0;
+}
+
+page-item-conv .message-wrap .message .user-img {
+  position: absolute;
+  border-radius: 45px;
+  width: 45px;
+  height: 45px;
+  -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.36);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.36);
+}
+
+page-item-conv .message-wrap .message .msg-detail {
+  width: 100%;
+  display: inline-block;
+}
+
+page-item-conv .message-wrap .message .msg-detail p {
+  margin: 0;
+}
+
+page-item-conv .message-wrap .message .msg-detail .msg-info p {
+  font-size: .8em;
+  color: #888;
+}
+
+page-item-conv .message-wrap .message .msg-detail .msg-content {
+  position: relative;
+  margin-top: 5px;
+  border-radius: 5px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  color: #fff;
+  width: auto;
+}
+
+page-item-conv .message-wrap .message .msg-detail .msg-content span.triangle {
+  background-color: #fff;
+  border-radius: 2px;
+  height: 8px;
+  width: 8px;
+  top: 12px;
+  display: block;
+  border-style: solid;
+  border-color: #ddd;
+  border-width: 1px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: absolute;
+}
+
+page-item-conv .message-wrap .message.left .msg-content {
+  background-color: #fff;
+  float: left;
+}
+
+page-item-conv .message-wrap .message.left .msg-detail {
+  padding-left: 60px;
+}
+
+page-item-conv .message-wrap .message.left .user-img {
+  left: 0;
+}
+
+page-item-conv .message-wrap .message.left .msg-content {
+  color: #343434;
+}
+
+page-item-conv .message-wrap .message.left .msg-content span.triangle {
+  border-top-width: 0;
+  border-right-width: 0;
+  left: -5px;
+}
+
+page-item-conv .message-wrap .message.right .msg-detail {
+  padding-right: 60px;
+}
+
+page-item-conv .message-wrap .message.right .msg-detail .msg-info {
+  text-align: right;
+}
+
+page-item-conv .message-wrap .message.right .user-img {
+  right: 0;
+}
+
+page-item-conv .message-wrap .message.right ion-spinner {
+  position: absolute;
+  right: 10px;
+  top: 50px;
+}
+
+page-item-conv .message-wrap .message.right .msg-content {
+  background-color: #387ef5;
+  float: right;
+}
+
+page-item-conv .message-wrap .message.right .msg-content span.triangle {
+  background-color: #387ef5;
+  border-bottom-width: 0;
+  border-left-width: 0;
+  right: -5px;
+}
+
 page-item-create .profile-image-wrapper {
   text-align: center;
   margin: 20px 0;
@@ -25540,19 +25689,6 @@ page-item-create .profile-image-wrapper .profile-image-placeholder ion-icon {
   font-size: 44px;
   margin-bottom: -10px;
   margin-top: 10px;
-}
-
-page-item-detail .item-profile {
-  width: 100%;
-  background-position: center center;
-  background-size: cover;
-  height: 250px;
-}
-
-page-item-detail .item-detail {
-  width: 100%;
-  background: white;
-  position: absolute;
 }
 
 page-tutorial .toolbar-background {

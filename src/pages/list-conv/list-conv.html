@@ -14,22 +14,27 @@
 
 <ion-content>
 
-  <ion-list>
-    <ion-item-sliding *ngFor="let item of currentItems">
-      <button ion-item (click)="openItem(item)">
-        <ion-avatar item-start>
-          <img [src]="item.users[0].picture" />
-        </ion-avatar>
-        <h2>{{item.users[0].firstname}} {{item.users[0].lastname}}</h2>
-        <p>{{item.messages.length > 0 ? item.messages[0].content : ""}}</p>
-        <ion-note item-end *ngIf="item.note">{{item.note}}</ion-note>
-      </button>
 
-      <ion-item-options>
-        <button ion-button color="danger" (click)="deleteItem(item)">
-          {{ 'DELETE_BUTTON' | translate }}
-        </button>
-      </ion-item-options>
-    </ion-item-sliding>
-  </ion-list>
+  <ion-list *ngFor="let item of currentItems">
+    <button ion-item (click)="openConversation(item._id)">
+      <ion-avatar item-start>
+        <img [src]="item.users[0].picture" />
+      </ion-avatar>
+      <h2>{{item.users[0].firstname}} {{item.users[0].lastname}}</h2>
+      <p>{{item.messages.length > 0 ? item.messages[0].content : ""}}</p>
+      <ion-note item-end *ngIf="item.note">{{item.note}}</ion-note>
+    </button>
+
+    <!--<ion-item-options>
+    <button ion-button color="danger" (click)="deleteItem(item)">
+    {{ 'DELETE_BUTTON' | translate }}
+  </button>
+</ion-item-options>-->
+</ion-list>
+<ion-fab right bottom (click)="createConversation()">
+  <button ion-fab>+</button>
+</ion-fab>
+<ion-fab center bottom (click)="ionViewDidLoad()">
+  <button ion-fab><ion-icon name="refresh"></ion-icon></button>
+</ion-fab>
 </ion-content>

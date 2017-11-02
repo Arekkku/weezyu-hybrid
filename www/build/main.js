@@ -1,4 +1,4 @@
-webpackJsonp([13],{
+webpackJsonp([14],{
 
 /***/ 113:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -41,55 +41,59 @@ webpackEmptyAsyncContext.id = 122;
 var map = {
 	"../pages/cards/cards.module": [
 		304,
-		12
+		13
 	],
 	"../pages/content/content.module": [
 		305,
+		12
+	],
+	"../pages/item-conv/item-conv.module": [
+		308,
 		11
 	],
 	"../pages/item-create/item-create.module": [
 		306,
 		10
 	],
-	"../pages/item-detail/item-detail.module": [
-		307,
-		9
-	],
 	"../pages/list-conv/list-conv.module": [
-		308,
-		8
+		307,
+		1
 	],
 	"../pages/list-master/list-friend.module": [
 		309,
-		7
+		0
+	],
+	"../pages/list-pending/list-pending.module": [
+		316,
+		9
 	],
 	"../pages/login/login.module": [
 		310,
-		6
+		8
 	],
 	"../pages/menu/menu.module": [
 		311,
-		5
+		7
 	],
-	"../pages/search/search.module": [
-		312,
-		4
+	"../pages/search-friends/search-friends.module": [
+		314,
+		6
 	],
 	"../pages/signup/signup.module": [
-		313,
-		3
+		312,
+		5
 	],
 	"../pages/tabs/tabs.module": [
-		314,
-		2
+		313,
+		4
 	],
 	"../pages/tutorial/tutorial.module": [
-		316,
-		1
+		315,
+		3
 	],
 	"../pages/welcome/welcome.module": [
-		315,
-		0
+		317,
+		2
 	]
 };
 function webpackAsyncContext(req) {
@@ -291,7 +295,7 @@ var FirstRunPage = 'TutorialPage';
 var MainPage = 'TabsPage';
 // The initial root pages for our tabs (remove if not using tabs)
 var Tab1Root = 'ListFriendPage';
-var Tab2Root = 'SearchPage';
+var Tab2Root = 'ListPendingPage';
 var Tab3Root = 'ListConvPage';
 //# sourceMappingURL=pages.js.map
 
@@ -387,16 +391,17 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/cards/cards.module#CardsPageModule', name: 'CardsPage', segment: 'cards', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/content/content.module#ContentPageModule', name: 'ContentPage', segment: 'content', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/item-create/item-create.module#ItemCreatePageModule', name: 'ItemCreatePage', segment: 'item-create', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/item-detail/item-detail.module#ItemDetailPageModule', name: 'ItemDetailPage', segment: 'item-detail', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/list-conv/list-conv.module#ListConvPageModule', name: 'ListConvPage', segment: 'list-conv', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/item-conv/item-conv.module#ItemConvPageModule', name: 'ItemConvPage', segment: 'item-conv', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/list-master/list-friend.module#ListFriendPageModule', name: 'ListFriendPage', segment: 'list-friend', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/menu/menu.module#MenuPageModule', name: 'MenuPage', segment: 'menu', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/search/search.module#SearchPageModule', name: 'SearchPage', segment: 'search', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/tabs/tabs.module#TabsPageModule', name: 'TabsPage', segment: 'tabs', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/welcome/welcome.module#WelcomePageModule', name: 'WelcomePage', segment: 'welcome', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/tutorial/tutorial.module#TutorialPageModule', name: 'TutorialPage', segment: 'tutorial', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/search-friends/search-friends.module#SearchFriendsPageModule', name: 'SearchFriendsPage', segment: 'search-friends', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/tutorial/tutorial.module#TutorialPageModule', name: 'TutorialPage', segment: 'tutorial', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/list-pending/list-pending.module#ListPendingPageModule', name: 'ListPendingPage', segment: 'list-pending', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/welcome/welcome.module#WelcomePageModule', name: 'WelcomePage', segment: 'welcome', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["a" /* IonicStorageModule */].forRoot()
@@ -581,6 +586,88 @@ var User = /** @class */ (function () {
         });
         return seq;
     };
+    User.prototype.search = function (params) {
+        var reqOpts = {
+            params: new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["d" /* HttpParams */](),
+            headers: new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set("Authorization", this.token)
+        };
+        var seq = this.api.get('users/search', params, reqOpts);
+        seq.subscribe(function (res) {
+            console.log(res);
+            // If the API returned a successful response, mark the user as logged in
+        }, function (err) {
+            console.error('ERROR', err);
+        });
+        return seq;
+    };
+    User.prototype.addFriend = function (params) {
+        var reqOpts = {
+            headers: new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set("Authorization", this.token)
+        };
+        var seq = this.api.post('users/me/friends/', { "friend_id": params }, reqOpts).share();
+        seq.subscribe(function (res) {
+            console.log(res);
+            // If the API returned a successful response, mark the user as logged in
+        }, function (err) {
+            console.error('ERROR', err);
+        });
+        return seq;
+    };
+    User.prototype.createConversation = function (params) {
+        //    let array : Array<string> = [params];
+        var reqOpts = {
+            headers: new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set("Authorization", this.token)
+        };
+        var seq = this.api.post('conversations', { "users": params }, reqOpts).share();
+        seq.subscribe(function (res) {
+            console.log(res);
+            // If the API returned a successful response, mark the user as logged in
+        }, function (err) {
+            console.error('ERROR', err);
+        });
+        return seq;
+    };
+    User.prototype.acceptFriendRequest = function (params) {
+        var reqOpts = {
+            headers: new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set("Authorization", this.token)
+        };
+        var seq = this.api.post('users/me/friends', { "friend_id": params }, reqOpts).share();
+        seq.subscribe(function (res) {
+            console.log(res);
+            // If the API returned a successful response, mark the user as logged in
+        }, function (err) {
+            console.error('ERROR', err);
+        });
+        return seq;
+    };
+    User.prototype.declineFriendRequest = function (params) {
+        var reqOpts = {
+            headers: new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set("Authorization", this.token),
+            body: { "friend_id": params }
+        };
+        var seq = this.api.delete('users/me/friends/', reqOpts).share();
+        seq.subscribe(function (res) {
+            console.log(res);
+            // If the API returned a successful response, mark the user as logged in
+        }, function (err) {
+            console.error('ERROR', err);
+        });
+        return seq;
+    };
+    User.prototype.getConversationid = function (params) {
+        var reqOpts = {
+            params: new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["d" /* HttpParams */](),
+            headers: new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set("Authorization", this.token)
+        };
+        var seq = this.api.get('conversations/me/' + params, params, reqOpts);
+        seq.subscribe(function (res) {
+            console.log(res);
+            // If the API returned a successful response, mark the user as logged in
+        }, function (err) {
+            console.error('ERROR', err);
+        });
+        return seq;
+    };
     User = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["B" /* Injectable */])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__api_api__["a" /* Api */]])
@@ -636,8 +723,10 @@ var MyApp = /** @class */ (function () {
             { title: 'Signup', component: 'SignupPage' },
             { title: 'Friends', component: 'ListFriendPage' },
             { title: 'Menu', component: 'MenuPage' },
-            { title: 'Search', component: 'SearchPage' },
-            { title: 'Conv Detail', component: 'ListConvPage' }
+            { title: 'Search', component: 'SearchFriendsPage' },
+            { title: 'Conv Detail', component: 'ListConvPage' },
+            { title: 'List Pending', component: 'ListPendingPage' },
+            { title: 'Item Conv', component: 'ItemConvPage' }
         ];
         platform.ready().then(function () {
             // Okay, so the platform is ready and our plugins are available.
