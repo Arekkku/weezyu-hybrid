@@ -24,6 +24,7 @@
         </ion-avatar>
         <h2>{{item.firstname}}</h2>
         <p>{{item.lastname}}</p>
+        <p>{{item.email}}</p>
         <ion-note item-end *ngIf="item.note">{{item.note}}</ion-note>
         <button (click)="acceptFriend(item._id)" item-end style="margin-right:1%; margin-top:0.2%;">+</button>
         <button (click)="declineFriend(item._id)" item-end style="margin-right:1%; margin-top:0.2%;">-</button>

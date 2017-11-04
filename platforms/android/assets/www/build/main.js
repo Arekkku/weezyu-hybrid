@@ -52,23 +52,23 @@ var map = {
 		11
 	],
 	"../pages/item-create/item-create.module": [
-		307,
+		308,
 		10
 	],
 	"../pages/list-conv/list-conv.module": [
-		308,
+		310,
 		1
 	],
 	"../pages/list-friend/list-friend.module": [
-		309,
+		307,
 		0
 	],
 	"../pages/list-pending/list-pending.module": [
-		310,
+		311,
 		9
 	],
 	"../pages/login/login.module": [
-		311,
+		309,
 		8
 	],
 	"../pages/menu/menu.module": [
@@ -394,11 +394,11 @@ AppModule = __decorate([
                     { loadChildren: '../pages/cards/cards.module#CardsPageModule', name: 'CardsPage', segment: 'cards', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/content/content.module#ContentPageModule', name: 'ContentPage', segment: 'content', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/item-conv/item-conv.module#ItemConvPageModule', name: 'ItemConvPage', segment: 'item-conv', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/item-create/item-create.module#ItemCreatePageModule', name: 'ItemCreatePage', segment: 'item-create', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/list-conv/list-conv.module#ListConvPageModule', name: 'ListConvPage', segment: 'list-conv', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/list-friend/list-friend.module#ListFriendPageModule', name: 'ListFriendPage', segment: 'list-friend', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/list-pending/list-pending.module#ListPendingPageModule', name: 'ListPendingPage', segment: 'list-pending', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/item-create/item-create.module#ItemCreatePageModule', name: 'ItemCreatePage', segment: 'item-create', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/list-conv/list-conv.module#ListConvPageModule', name: 'ListConvPage', segment: 'list-conv', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/list-pending/list-pending.module#ListPendingPageModule', name: 'ListPendingPage', segment: 'list-pending', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/menu/menu.module#MenuPageModule', name: 'MenuPage', segment: 'menu', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/search-friends/search-friends.module#SearchFriendsPageModule', name: 'SearchFriendsPage', segment: 'search-friends', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },

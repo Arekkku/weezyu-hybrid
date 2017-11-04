@@ -21,7 +21,7 @@
         <img [src]="item.picture" />
       </ion-avatar>
       <h2>{{item.fullname}}</h2>
-      <p>{{item.description}}</p>
+      <p>{{item.email}}</p>
       <ion-note item-end *ngIf="item.note">{{item.note}}</ion-note>
       <button (click)="itemAction(item._id)" item-end style="margin-right:1%; margin-top:0.2%;">+</button>
 

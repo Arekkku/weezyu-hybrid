@@ -22,6 +22,7 @@
       </ion-avatar>
       <h2>{{item.users[0].firstname}} {{item.users[0].lastname}}</h2>
       <p>{{item.messages.length > 0 ? item.messages[0].content : ""}}</p>
+      <p>{{item.email}}</p>
       <ion-note item-end *ngIf="item.note">{{item.note}}</ion-note>
     </button>
 

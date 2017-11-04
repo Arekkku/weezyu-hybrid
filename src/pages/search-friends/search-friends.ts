@@ -21,6 +21,7 @@ export class SearchFriendsPage {
 
   currentItems: any = [];
   fullname: any;
+  email: any;
   currentType: Type;
 
   constructor(public navCtrl: NavController, public items: Items, public modalCtrl: ModalController, public user: User, public toastCtrl: ToastController, private navParams: NavParams, public loadingCtrl: LoadingController) {
