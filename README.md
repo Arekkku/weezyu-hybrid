@@ -9,6 +9,11 @@ Weezyu hybrid est une version hybrid de l'application Weezyu.
 Cette version simplifiée et developpée via Ionic a pour but de montrer le système de tchat et d'amis de l'application.
 Ainsi cette application va avoir comme fonctionnalité le fait de pouvoir se connecter à son compte Weezyu accéder à ses amis, pouvoir les rechercher et enfin pouvoir communiquer avec eux via le système de tchat.
 
+### IMPORTANT
+
+Il y a des users avec l'adresse email arekuX@voila.fr (X a remplacer par un chiffre de 2 à 7) qui peuvent être utilisé car ils possèdent des noms et prénoms pour faire les tests (en plus du compte de base qui est raphael.teyssandier@gmail.com).
+Le mot de passe pour ces comptes est 123456
+
 ## Table des matières
 
 1. L'API
