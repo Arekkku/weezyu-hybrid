@@ -1,15 +1,15 @@
 webpackJsonp([1],{
 
-/***/ 315:
+/***/ 308:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TutorialPageModule", function() { return TutorialPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ListConvPageModule", function() { return ListConvPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tutorial__ = __webpack_require__(328);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__list_conv__ = __webpack_require__(323);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -20,38 +20,39 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var TutorialPageModule = /** @class */ (function () {
-    function TutorialPageModule() {
+var ListConvPageModule = (function () {
+    function ListConvPageModule() {
     }
-    TutorialPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__tutorial__["a" /* TutorialPage */],
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__tutorial__["a" /* TutorialPage */]),
-                __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__["b" /* TranslateModule */].forChild()
-            ],
-            exports: [
-                __WEBPACK_IMPORTED_MODULE_2__tutorial__["a" /* TutorialPage */]
-            ]
-        })
-    ], TutorialPageModule);
-    return TutorialPageModule;
+    return ListConvPageModule;
 }());
+ListConvPageModule = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* NgModule */])({
+        declarations: [
+            __WEBPACK_IMPORTED_MODULE_3__list_conv__["a" /* ListConvPage */],
+        ],
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__list_conv__["a" /* ListConvPage */]),
+            __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__["b" /* TranslateModule */].forChild()
+        ],
+        exports: [
+            __WEBPACK_IMPORTED_MODULE_3__list_conv__["a" /* ListConvPage */]
+        ]
+    })
+], ListConvPageModule);
 
-//# sourceMappingURL=tutorial.module.js.map
+//# sourceMappingURL=list-conv.module.js.map
 
 /***/ }),
 
-/***/ 328:
+/***/ 318:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TutorialPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return Type; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchFriendsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_providers__ = __webpack_require__(113);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -64,69 +65,198 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var TutorialPage = /** @class */ (function () {
-    function TutorialPage(navCtrl, menu, translate, platform) {
-        var _this = this;
-        this.navCtrl = navCtrl;
-        this.menu = menu;
-        this.platform = platform;
-        this.showSkip = true;
-        this.dir = 'ltr';
-        this.dir = platform.dir();
-        translate.get(["TUTORIAL_SLIDE1_TITLE",
-            "TUTORIAL_SLIDE1_DESCRIPTION",
-            "TUTORIAL_SLIDE2_TITLE",
-            "TUTORIAL_SLIDE2_DESCRIPTION",
-            "TUTORIAL_SLIDE3_TITLE",
-            "TUTORIAL_SLIDE3_DESCRIPTION",
-        ]).subscribe(function (values) {
-            console.log('Loaded values', values);
-            _this.slides = [
-                {
-                    title: values.TUTORIAL_SLIDE1_TITLE,
-                    description: values.TUTORIAL_SLIDE1_DESCRIPTION,
-                    image: 'assets/img/ica-slidebox-img-1.png',
-                },
-                {
-                    title: values.TUTORIAL_SLIDE2_TITLE,
-                    description: values.TUTORIAL_SLIDE2_DESCRIPTION,
-                    image: 'assets/img/ica-slidebox-img-2.png',
-                },
-                {
-                    title: values.TUTORIAL_SLIDE3_TITLE,
-                    description: values.TUTORIAL_SLIDE3_DESCRIPTION,
-                    image: 'assets/img/ica-slidebox-img-3.png',
-                }
-            ];
-        });
-    }
-    TutorialPage.prototype.startApp = function () {
-        this.navCtrl.setRoot('WelcomePage', {}, {
-            animate: true,
-            direction: 'forward'
-        });
-    };
-    TutorialPage.prototype.onSlideChangeStart = function (slider) {
-        this.showSkip = !slider.isEnd();
-    };
-    TutorialPage.prototype.ionViewDidEnter = function () {
-        // the root left menu should be disabled on the tutorial page
-        this.menu.enable(false);
-    };
-    TutorialPage.prototype.ionViewWillLeave = function () {
-        // enable the root left menu when leaving the tutorial page
-        this.menu.enable(true);
-    };
-    TutorialPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-tutorial',template:/*ion-inline-start:"C:\Users\a.chenevier\Documents\weezyu-hybrid\src\pages\tutorial\tutorial.html"*/'<ion-header no-shadow>\n\n  <ion-navbar>\n\n    <ion-buttons end *ngIf="showSkip">\n\n      <button ion-button (click)="startApp()" color="primary">{{ \'TUTORIAL_SKIP_BUTTON\' | translate}}</button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content no-bounce>\n\n  <ion-slides pager="true" dir="{{dir}}" (ionSlideWillChange)="onSlideChangeStart($event)">\n\n    <ion-slide *ngFor="let slide of slides">\n\n      <img [src]="slide.image" class="slide-image" />\n\n      <h2 class="slide-title" [innerHTML]="slide.title"></h2>\n\n      <p [innerHTML]="slide.description"></p>\n\n    </ion-slide>\n\n    <ion-slide>\n\n      <img src="assets/img/ica-slidebox-img-4.png" class="slide-image" />\n\n      <h2 class="slide-title">{{ \'TUTORIAL_SLIDE4_TITLE\' | translate }}</h2>\n\n      <button ion-button icon-end large clear (click)="startApp()">\n\n        {{ \'TUTORIAL_CONTINUE_BUTTON\' | translate }}\n\n        <ion-icon name="arrow-forward"></ion-icon>\n\n      </button>\n\n    </ion-slide>\n\n  </ion-slides>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\a.chenevier\Documents\weezyu-hybrid\src\pages\tutorial\tutorial.html"*/
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */], __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__["c" /* TranslateService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */]])
-    ], TutorialPage);
-    return TutorialPage;
-}());
 
-//# sourceMappingURL=tutorial.js.map
+var Type;
+(function (Type) {
+    Type[Type["Friend"] = 1] = "Friend";
+    Type[Type["Conversations"] = 2] = "Conversations";
+})(Type || (Type = {}));
+var SearchFriendsPage = (function () {
+    function SearchFriendsPage(navCtrl, items, modalCtrl, user, toastCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.items = items;
+        this.modalCtrl = modalCtrl;
+        this.user = user;
+        this.toastCtrl = toastCtrl;
+        this.navParams = navParams;
+        this.currentItems = [];
+        this.currentType = navParams.get("type");
+        console.log(this.currentType);
+    }
+    /**
+     * Perform a service for the proper items.
+     */
+    SearchFriendsPage.prototype.getItems = function (ev) {
+        var val = ev.target.value;
+        if (!val || !val.trim()) {
+            this.currentItems = [];
+            return;
+        }
+        this.currentItems = this.items.query({
+            name: val
+        });
+    };
+    SearchFriendsPage.prototype.search = function () {
+        var _this = this;
+        console.log(this.fullname);
+        this.user.search(this.fullname).subscribe(function (resp) {
+            if (resp != null) {
+                _this.currentItems = resp;
+            }
+        }, function (err) {
+            //this.navCtrl.push(MainPage);
+            // Unable to log in
+            var toast = _this.toastCtrl.create({
+                message: "Erreur à la recuperation des conversations",
+                duration: 3000,
+                position: 'top'
+            });
+            toast.present();
+        });
+    };
+    SearchFriendsPage.prototype.itemAction = function (id) {
+        var _this = this;
+        if (this.currentType == Type.Friend) {
+            this.user.addFriend(id).subscribe(function (resp) {
+            }, function (err) {
+                var toast = _this.toastCtrl.create({
+                    message: "Impossible d'ajouter un ami",
+                    duration: 3000,
+                    position: 'top'
+                });
+                toast.present();
+            });
+        }
+        else {
+            this.user.createConversation(id).subscribe(function (resp) {
+            }, function (err) {
+                var toast = _this.toastCtrl.create({
+                    message: "Impossible d'ajouter un ami",
+                    duration: 3000,
+                    position: 'top'
+                });
+                toast.present();
+            });
+        }
+    };
+    /**
+     * Navigate to the detail page for this item.
+     */
+    SearchFriendsPage.prototype.openItem = function (item) {
+        this.navCtrl.push('ItemDetailPage', {
+            item: item
+        });
+    };
+    return SearchFriendsPage;
+}());
+SearchFriendsPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-search-friends',template:/*ion-inline-start:"/Users/arekkku/weezyu-hybrid/src/pages/search-friends/search-friends.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{ \'SEARCH_TITLE\' | translate }}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n  <ion-fab style="margin-right:1%; margin-top:0.2%;"right  (click)="search()">\n    <button ion-fab><ion-icon name="search"></ion-icon></button>\n  </ion-fab>\n  <ion-item>\n      <ion-label floating>Fullname</ion-label>\n      <ion-input type="text" [(ngModel)]="fullname"></ion-input>\n  </ion-item>\n  <ion-list>\n    <button ion-item *ngFor="let item of currentItems">\n      <ion-avatar item-start>\n        <img [src]="item.picture" />\n      </ion-avatar>\n      <h2>{{item.fullname}}</h2>\n      <p>{{item.description}}</p>\n      <ion-note item-end *ngIf="item.note">{{item.note}}</ion-note>\n      <button (click)="itemAction(item._id)" item-end style="margin-right:1%; margin-top:0.2%;">+</button>\n\n    </button>\n\n  </ion-list>\n\n</ion-content>\n'/*ion-inline-end:"/Users/arekkku/weezyu-hybrid/src/pages/search-friends/search-friends.html"*/
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_providers__["b" /* Items */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ModalController */], __WEBPACK_IMPORTED_MODULE_2__providers_providers__["c" /* User */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
+], SearchFriendsPage);
+
+//# sourceMappingURL=search-friends.js.map
+
+/***/ }),
+
+/***/ 323:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ListConvPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_providers__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__search_friends_search_friends__ = __webpack_require__(318);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var ListConvPage = (function () {
+    function ListConvPage(navCtrl, items, modalCtrl, user, toastCtrl) {
+        this.navCtrl = navCtrl;
+        this.items = items;
+        this.modalCtrl = modalCtrl;
+        this.user = user;
+        this.toastCtrl = toastCtrl;
+    }
+    /**
+     * The view loaded, let's query our items for the list
+     */
+    ListConvPage.prototype.ionViewDidLoad = function () {
+        var _this = this;
+        this.user.getConversation("").subscribe(function (resp) {
+            _this.currentItems = resp;
+        }, function (err) {
+            //this.navCtrl.push(MainPage);
+            // Unable to log in
+            var toast = _this.toastCtrl.create({
+                message: "Erreur à la recuperation des conversations",
+                duration: 3000,
+                position: 'top'
+            });
+            toast.present();
+        });
+    };
+    /**
+     * Prompt the user to add a new item. This shows our ItemCreatePage in a
+     * modal and then adds the new item to our data source if the user created one.
+     */
+    ListConvPage.prototype.addItem = function () {
+        var _this = this;
+        var addModal = this.modalCtrl.create('ItemCreatePage');
+        addModal.onDidDismiss(function (item) {
+            if (item) {
+                _this.items.add(item);
+            }
+        });
+        addModal.present();
+    };
+    /**
+     * Delete an item from the list of items.
+     */
+    ListConvPage.prototype.deleteItem = function (item) {
+        this.items.delete(item);
+    };
+    ListConvPage.prototype.createConversation = function () {
+        this.navCtrl.push('SearchFriendsPage', {
+            type: __WEBPACK_IMPORTED_MODULE_3__search_friends_search_friends__["b" /* Type */].Conversations
+        });
+    };
+    ListConvPage.prototype.openConversation = function (id) {
+        this.navCtrl.push('ItemConvPage', {
+            item: id
+        });
+    };
+    /**
+     * Navigate to the detail page for this item.
+     */
+    ListConvPage.prototype.openItem = function (item) {
+        this.navCtrl.push('ItemDetailPage', {
+            item: item
+        });
+    };
+    return ListConvPage;
+}());
+ListConvPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-list-conv',template:/*ion-inline-start:"/Users/arekkku/weezyu-hybrid/src/pages/list-conv/list-conv.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{ \'LIST_MASTER_CONV\' | translate }}</ion-title>\n\n    <ion-buttons end>\n      <button ion-button icon-only (click)="addItem()">\n        <ion-icon name="add"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n\n\n  <ion-list *ngFor="let item of currentItems">\n    <button ion-item (click)="openConversation(item._id)">\n      <ion-avatar item-start>\n        <img [src]="item.users[0].picture" />\n      </ion-avatar>\n      <h2>{{item.users[0].firstname}} {{item.users[0].lastname}}</h2>\n      <p>{{item.messages.length > 0 ? item.messages[0].content : ""}}</p>\n      <ion-note item-end *ngIf="item.note">{{item.note}}</ion-note>\n    </button>\n\n    <!--<ion-item-options>\n    <button ion-button color="danger" (click)="deleteItem(item)">\n    {{ \'DELETE_BUTTON\' | translate }}\n  </button>\n</ion-item-options>-->\n</ion-list>\n<ion-fab right bottom (click)="createConversation()">\n  <button ion-fab>+</button>\n</ion-fab>\n<ion-fab center bottom (click)="ionViewDidLoad()">\n  <button ion-fab><ion-icon name="refresh"></ion-icon></button>\n</ion-fab>\n</ion-content>\n'/*ion-inline-end:"/Users/arekkku/weezyu-hybrid/src/pages/list-conv/list-conv.html"*/
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_providers__["b" /* Items */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ModalController */], __WEBPACK_IMPORTED_MODULE_2__providers_providers__["c" /* User */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */]])
+], ListConvPage);
+
+//# sourceMappingURL=list-conv.js.map
 
 /***/ })
 

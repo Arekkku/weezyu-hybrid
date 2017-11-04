@@ -1,0 +1,42 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ 'LIST_MASTER_FRIEND' | translate }}</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addItem()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of currentItems">
+      <button ion-item>
+        <ion-avatar item-start>
+          <img [src]="item.picture" />
+        </ion-avatar>
+        <h2>{{item.firstname}}</h2>
+        <p>{{item.lastname}}</p>
+        <button (click)="delete_friend(item._id)" item-end style="margin-right:1%; margin-top:0.2%;">x</button>
+        <ion-note item-end *ngIf="item.note">{{item.note}}</ion-note>
+      </button>
+
+      <ion-item-options>
+        <button ion-button color="danger" (click)="deleteItem(item)">
+          {{ 'DELETE_BUTTON' | translate }}
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <ion-fab right bottom (click)="addFriend()">
+    <button ion-fab>+</button>
+  </ion-fab>
+  <ion-fab center bottom (click)="ionViewDidLoad()">
+    <button ion-fab><ion-icon name="refresh"></ion-icon></button>
+  </ion-fab>
+</ion-content>

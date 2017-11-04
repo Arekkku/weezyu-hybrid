@@ -1,4 +1,4 @@
-webpackJsonp([13],{
+webpackJsonp([14],{
 
 /***/ 113:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -41,55 +41,59 @@ webpackEmptyAsyncContext.id = 122;
 var map = {
 	"../pages/cards/cards.module": [
 		304,
-		12
+		13
 	],
 	"../pages/content/content.module": [
 		305,
+		12
+	],
+	"../pages/item-conv/item-conv.module": [
+		306,
 		11
 	],
 	"../pages/item-create/item-create.module": [
-		306,
-		10
-	],
-	"../pages/item-detail/item-detail.module": [
 		307,
-		9
+		10
 	],
 	"../pages/list-conv/list-conv.module": [
 		308,
-		8
-	],
-	"../pages/list-master/list-friend.module": [
-		309,
-		7
-	],
-	"../pages/login/login.module": [
-		310,
-		6
-	],
-	"../pages/menu/menu.module": [
-		311,
-		5
-	],
-	"../pages/search/search.module": [
-		312,
-		4
-	],
-	"../pages/signup/signup.module": [
-		313,
-		3
-	],
-	"../pages/tabs/tabs.module": [
-		314,
-		2
-	],
-	"../pages/tutorial/tutorial.module": [
-		315,
 		1
 	],
-	"../pages/welcome/welcome.module": [
-		316,
+	"../pages/list-friend/list-friend.module": [
+		309,
 		0
+	],
+	"../pages/list-pending/list-pending.module": [
+		310,
+		9
+	],
+	"../pages/login/login.module": [
+		311,
+		8
+	],
+	"../pages/menu/menu.module": [
+		312,
+		7
+	],
+	"../pages/search-friends/search-friends.module": [
+		313,
+		6
+	],
+	"../pages/signup/signup.module": [
+		314,
+		5
+	],
+	"../pages/tabs/tabs.module": [
+		315,
+		4
+	],
+	"../pages/tutorial/tutorial.module": [
+		316,
+		3
+	],
+	"../pages/welcome/welcome.module": [
+		317,
+		2
 	]
 };
 function webpackAsyncContext(req) {
@@ -129,7 +133,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 /**
  * Api is a generic REST Api handler. Set your API url first.
  */
-var Api = /** @class */ (function () {
+var Api = (function () {
     function Api(http) {
         this.http = http;
         this.url = 'https://dev.api.weezyu.com';
@@ -162,12 +166,12 @@ var Api = /** @class */ (function () {
     Api.prototype.patch = function (endpoint, body, reqOpts) {
         return this.http.put(this.url + '/' + endpoint, body, reqOpts);
     };
-    Api = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["B" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]])
-    ], Api);
     return Api;
 }());
+Api = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["B" /* Injectable */])(),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]])
+], Api);
 
 //# sourceMappingURL=api.js.map
 
@@ -191,7 +195,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-var Items = /** @class */ (function () {
+var Items = (function () {
     function Items() {
         this.items = [];
         this.defaultItem = {
@@ -264,12 +268,12 @@ var Items = /** @class */ (function () {
     Items.prototype.delete = function (item) {
         this.items.splice(this.items.indexOf(item), 1);
     };
-    Items = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-        __metadata("design:paramtypes", [])
-    ], Items);
     return Items;
 }());
+Items = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+    __metadata("design:paramtypes", [])
+], Items);
 
 //# sourceMappingURL=items.js.map
 
@@ -285,13 +289,14 @@ var Items = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return Tab2Root; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return Tab3Root; });
 // The page the user lands on after opening the app and without a session
+// The page the user lands on after opening the app and without a session
 var FirstRunPage = 'TutorialPage';
 // The main page the user will see as they use the app over a long period of time.
 // Change this if not using tabs
 var MainPage = 'TabsPage';
 // The initial root pages for our tabs (remove if not using tabs)
 var Tab1Root = 'ListFriendPage';
-var Tab2Root = 'SearchPage';
+var Tab2Root = 'ListPendingPage';
 var Tab3Root = 'ListConvPage';
 //# sourceMappingURL=pages.js.map
 
@@ -364,61 +369,62 @@ function provideSettings(storage) {
      * these values will not overwrite the saved values (this can be done manually if desired).
      */
 }
-var AppModule = /** @class */ (function () {
+var AppModule = (function () {
     function AppModule() {
     }
-    AppModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["L" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_12__app_component__["a" /* MyApp */]
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["b" /* HttpClientModule */],
-                __WEBPACK_IMPORTED_MODULE_7__ngx_translate_core__["b" /* TranslateModule */].forRoot({
-                    loader: {
-                        provide: __WEBPACK_IMPORTED_MODULE_7__ngx_translate_core__["a" /* TranslateLoader */],
-                        useFactory: (createTranslateLoader),
-                        deps: [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]]
-                    }
-                }),
-                __WEBPACK_IMPORTED_MODULE_9_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_12__app_component__["a" /* MyApp */], {}, {
-                    links: [
-                        { loadChildren: '../pages/cards/cards.module#CardsPageModule', name: 'CardsPage', segment: 'cards', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/content/content.module#ContentPageModule', name: 'ContentPage', segment: 'content', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/item-create/item-create.module#ItemCreatePageModule', name: 'ItemCreatePage', segment: 'item-create', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/item-detail/item-detail.module#ItemDetailPageModule', name: 'ItemDetailPage', segment: 'item-detail', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/list-conv/list-conv.module#ListConvPageModule', name: 'ListConvPage', segment: 'list-conv', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/list-master/list-friend.module#ListFriendPageModule', name: 'ListFriendPage', segment: 'list-friend', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/menu/menu.module#MenuPageModule', name: 'MenuPage', segment: 'menu', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/search/search.module#SearchPageModule', name: 'SearchPage', segment: 'search', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/tabs/tabs.module#TabsPageModule', name: 'TabsPage', segment: 'tabs', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/tutorial/tutorial.module#TutorialPageModule', name: 'TutorialPage', segment: 'tutorial', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/welcome/welcome.module#WelcomePageModule', name: 'WelcomePage', segment: 'welcome', priority: 'low', defaultHistory: [] }
-                    ]
-                }),
-                __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["a" /* IonicStorageModule */].forRoot()
-            ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_9_ionic_angular__["b" /* IonicApp */]],
-            entryComponents: [
-                __WEBPACK_IMPORTED_MODULE_12__app_component__["a" /* MyApp */]
-            ],
-            providers: [
-                __WEBPACK_IMPORTED_MODULE_11__providers_providers__["a" /* Api */],
-                __WEBPACK_IMPORTED_MODULE_10__mocks_providers_items__["a" /* Items */],
-                __WEBPACK_IMPORTED_MODULE_11__providers_providers__["c" /* User */],
-                __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__["a" /* Camera */],
-                __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */],
-                __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__["a" /* StatusBar */],
-                // Keep this to enable Ionic's runtime error handling during development
-                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["v" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_9_ionic_angular__["c" /* IonicErrorHandler */] }
-            ]
-        })
-    ], AppModule);
     return AppModule;
 }());
+AppModule = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["L" /* NgModule */])({
+        declarations: [
+            __WEBPACK_IMPORTED_MODULE_12__app_component__["a" /* MyApp */]
+        ],
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["a" /* BrowserModule */],
+            __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["b" /* HttpClientModule */],
+            __WEBPACK_IMPORTED_MODULE_7__ngx_translate_core__["b" /* TranslateModule */].forRoot({
+                loader: {
+                    provide: __WEBPACK_IMPORTED_MODULE_7__ngx_translate_core__["a" /* TranslateLoader */],
+                    useFactory: (createTranslateLoader),
+                    deps: [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]]
+                }
+            }),
+            __WEBPACK_IMPORTED_MODULE_9_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_12__app_component__["a" /* MyApp */], {}, {
+                links: [
+                    { loadChildren: '../pages/cards/cards.module#CardsPageModule', name: 'CardsPage', segment: 'cards', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/content/content.module#ContentPageModule', name: 'ContentPage', segment: 'content', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/item-conv/item-conv.module#ItemConvPageModule', name: 'ItemConvPage', segment: 'item-conv', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/item-create/item-create.module#ItemCreatePageModule', name: 'ItemCreatePage', segment: 'item-create', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/list-conv/list-conv.module#ListConvPageModule', name: 'ListConvPage', segment: 'list-conv', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/list-friend/list-friend.module#ListFriendPageModule', name: 'ListFriendPage', segment: 'list-friend', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/list-pending/list-pending.module#ListPendingPageModule', name: 'ListPendingPage', segment: 'list-pending', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/menu/menu.module#MenuPageModule', name: 'MenuPage', segment: 'menu', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/search-friends/search-friends.module#SearchFriendsPageModule', name: 'SearchFriendsPage', segment: 'search-friends', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/tabs/tabs.module#TabsPageModule', name: 'TabsPage', segment: 'tabs', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/tutorial/tutorial.module#TutorialPageModule', name: 'TutorialPage', segment: 'tutorial', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/welcome/welcome.module#WelcomePageModule', name: 'WelcomePage', segment: 'welcome', priority: 'low', defaultHistory: [] }
+                ]
+            }),
+            __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["a" /* IonicStorageModule */].forRoot()
+        ],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_9_ionic_angular__["b" /* IonicApp */]],
+        entryComponents: [
+            __WEBPACK_IMPORTED_MODULE_12__app_component__["a" /* MyApp */]
+        ],
+        providers: [
+            __WEBPACK_IMPORTED_MODULE_11__providers_providers__["a" /* Api */],
+            __WEBPACK_IMPORTED_MODULE_10__mocks_providers_items__["a" /* Items */],
+            __WEBPACK_IMPORTED_MODULE_11__providers_providers__["c" /* User */],
+            __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__["a" /* Camera */],
+            __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */],
+            __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__["a" /* StatusBar */],
+            // Keep this to enable Ionic's runtime error handling during development
+            { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["v" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_9_ionic_angular__["c" /* IonicErrorHandler */] }
+        ]
+    })
+], AppModule);
 
 //# sourceMappingURL=app.module.js.map
 
@@ -438,7 +444,7 @@ var AppModule = /** @class */ (function () {
  * The Items service manages creating instances of Item, so go ahead and rename
  * that something that fits your app as well.
  */
-var Item = /** @class */ (function () {
+var Item = (function () {
     function Item(fields) {
         // Quick and dirty extend/assign fields to this model
         for (var f in fields) {
@@ -495,7 +501,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 *
 * If the `status` field is not `success`, then an error is detected and returned.
 */
-var User = /** @class */ (function () {
+var User = (function () {
     function User(api) {
         this.api = api;
     }
@@ -517,7 +523,7 @@ var User = /** @class */ (function () {
             else {
             }
         }, function (err) {
-            console.error('ERROR', err);
+            console.error('ERROR', "" + err);
         });
         return seq;
     };
@@ -532,12 +538,14 @@ var User = /** @class */ (function () {
         var _this = this;
         var seq = this.api.post('users', accountInfo).share();
         seq.subscribe(function (res) {
+            _this._user = res.user;
+            _this.token = "Bearer " + res.token;
             // If the API returned a successful response, mark the user as logged in
             if (res.status == 'success') {
                 _this._loggedIn(res);
             }
         }, function (err) {
-            console.error('ERROR', err);
+            console.error('ERROR', "" + err);
         });
         return seq;
     };
@@ -563,7 +571,7 @@ var User = /** @class */ (function () {
             console.log(res);
             // If the API returned a successful response, mark the user as logged in
         }, function (err) {
-            console.error('ERROR', err);
+            console.error('ERROR', "" + err);
         });
         return seq;
     };
@@ -577,16 +585,112 @@ var User = /** @class */ (function () {
             console.log(res);
             // If the API returned a successful response, mark the user as logged in
         }, function (err) {
+            console.error('ERROR', "" + err);
+        });
+        return seq;
+    };
+    User.prototype.search = function (params) {
+        var reqOpts = {
+            params: new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["d" /* HttpParams */](),
+            headers: new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set("Authorization", this.token)
+        };
+        var seq = this.api.get('users/search', params, reqOpts);
+        seq.subscribe(function (res) {
+            console.log(res);
+            // If the API returned a successful response, mark the user as logged in
+        }, function (err) {
             console.error('ERROR', err);
         });
         return seq;
     };
-    User = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["B" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__api_api__["a" /* Api */]])
-    ], User);
+    User.prototype.addFriend = function (params) {
+        var reqOpts = {
+            headers: new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set("Authorization", this.token)
+        };
+        var seq = this.api.post('users/me/friends/', { "friend_id": params }, reqOpts).share();
+        seq.subscribe(function (res) {
+            console.log(res);
+            // If the API returned a successful response, mark the user as logged in
+        }, function (err) {
+            console.error('ERROR', err);
+        });
+        return seq;
+    };
+    User.prototype.createConversation = function (params) {
+        //    let array : Array<string> = [params];
+        var reqOpts = {
+            headers: new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set("Authorization", this.token)
+        };
+        var seq = this.api.post('conversations', { "users": params }, reqOpts).share();
+        seq.subscribe(function (res) {
+            console.log(res);
+            // If the API returned a successful response, mark the user as logged in
+        }, function (err) {
+            console.error('ERROR', err);
+        });
+        return seq;
+    };
+    User.prototype.acceptFriendRequest = function (params) {
+        var reqOpts = {
+            headers: new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set("Authorization", this.token)
+        };
+        var seq = this.api.post('users/me/friends', { "friend_id": params }, reqOpts).share();
+        seq.subscribe(function (res) {
+            console.log(res);
+            // If the API returned a successful response, mark the user as logged in
+        }, function (err) {
+            console.error('ERROR', err);
+        });
+        return seq;
+    };
+    User.prototype.declineFriendRequest = function (params) {
+        var reqOpts = {
+            headers: new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set("Authorization", this.token),
+            body: { "friend_id": params }
+        };
+        var seq = this.api.delete('users/me/friends/', reqOpts).share();
+        seq.subscribe(function (res) {
+            console.log(res);
+            // If the API returned a successful response, mark the user as logged in
+        }, function (err) {
+            console.error('ERROR', err);
+        });
+        return seq;
+    };
+    User.prototype.getConversationid = function (params) {
+        var reqOpts = {
+            params: new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["d" /* HttpParams */](),
+            headers: new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set("Authorization", this.token)
+        };
+        var seq = this.api.get('conversations/me/' + params, params, reqOpts);
+        seq.subscribe(function (res) {
+            console.log(res);
+            // If the API returned a successful response, mark the user as logged in
+        }, function (err) {
+            console.error('ERROR', err);
+        });
+        return seq;
+    };
+    User.prototype.deleteFriend = function (params) {
+        var reqOpts = {
+            headers: new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]().set("Authorization", this.token),
+            body: { "friend_id": params }
+        };
+        var seq = this.api.delete('users/me/friends/', reqOpts).share();
+        seq.subscribe(function (res) {
+            console.log(res);
+            // If the API returned a successful response, mark the user as logged in
+        }, function (err) {
+            console.error('ERROR', err);
+        });
+        return seq;
+    };
     return User;
 }());
+User = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["B" /* Injectable */])(),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__api_api__["a" /* Api */]])
+], User);
 
 //# sourceMappingURL=user.js.map
 
@@ -618,7 +722,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var MyApp = /** @class */ (function () {
+var MyApp = (function () {
     function MyApp(translate, platform, config, statusBar, splashScreen) {
         var _this = this;
         this.translate = translate;
@@ -636,8 +740,10 @@ var MyApp = /** @class */ (function () {
             { title: 'Signup', component: 'SignupPage' },
             { title: 'Friends', component: 'ListFriendPage' },
             { title: 'Menu', component: 'MenuPage' },
-            { title: 'Search', component: 'SearchPage' },
-            { title: 'Conv Detail', component: 'ListConvPage' }
+            { title: 'Search', component: 'SearchFriendsPage' },
+            { title: 'Conv Detail', component: 'ListConvPage' },
+            { title: 'List Pending', component: 'ListPendingPage' },
+            { title: 'Item Conv', component: 'ItemConvPage' }
         ];
         platform.ready().then(function () {
             // Okay, so the platform is ready and our plugins are available.
@@ -666,18 +772,18 @@ var MyApp = /** @class */ (function () {
         // we wouldn't want the back button to show in this scenario
         this.nav.setRoot(page.component);
     };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["h" /* Nav */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["h" /* Nav */])
-    ], MyApp.prototype, "nav", void 0);
-    MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            template: "<ion-menu [content]=\"content\">\n    <ion-header>\n      <ion-toolbar>\n        <ion-title>Pages</ion-title>\n      </ion-toolbar>\n    </ion-header>\n\n    <ion-content>\n      <ion-list>\n        <button menuClose ion-item *ngFor=\"let p of pages\" (click)=\"openPage(p)\">\n          {{p.title}}\n        </button>\n      </ion-list>\n    </ion-content>\n\n  </ion-menu>\n  <ion-nav #content [root]=\"rootPage\"></ion-nav>"
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__["c" /* TranslateService */], __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["k" /* Platform */], __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["a" /* Config */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_1__ionic_native_splash_screen__["a" /* SplashScreen */]])
-    ], MyApp);
     return MyApp;
 }());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["i" /* Nav */]),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["i" /* Nav */])
+], MyApp.prototype, "nav", void 0);
+MyApp = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        template: "<ion-menu [content]=\"content\">\n    <ion-header>\n      <ion-toolbar>\n        <ion-title>Pages</ion-title>\n      </ion-toolbar>\n    </ion-header>\n\n    <ion-content>\n      <ion-list>\n        <button menuClose ion-item *ngFor=\"let p of pages\" (click)=\"openPage(p)\">\n          {{p.title}}\n        </button>\n      </ion-list>\n    </ion-content>\n\n  </ion-menu>\n  <ion-nav #content [root]=\"rootPage\"></ion-nav>"
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__["c" /* TranslateService */], __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["l" /* Platform */], __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["a" /* Config */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_1__ionic_native_splash_screen__["a" /* SplashScreen */]])
+], MyApp);
 
 //# sourceMappingURL=app.component.js.map
 

@@ -4,6 +4,10 @@ import { IonicPage, NavController, ToastController } from 'ionic-angular';
 
 import { User } from '../../providers/providers';
 import { MainPage } from '../pages';
+import { Item } from '../../models/item';
+import { Items } from '../../providers/providers';
+import { LoadingController } from 'ionic-angular';
+
 
 @IonicPage()
 @Component({
@@ -14,8 +18,7 @@ export class SignupPage {
   // The account fields for the login form.
   // If you're using the username field with or without email, make
   // sure to add it to the type
-  account: { name: string, email: string, password: string } = {
-    name: 'Test Human',
+  account: {email: string, password: string } = {
     email: 'test@example.com',
     password: 'test'
   };
@@ -26,7 +29,8 @@ export class SignupPage {
   constructor(public navCtrl: NavController,
     public user: User,
     public toastCtrl: ToastController,
-    public translateService: TranslateService) {
+    public translateService: TranslateService,
+    public loadingCtrl: LoadingController) {
 
     this.translateService.get('SIGNUP_ERROR').subscribe((value) => {
       this.signupErrorString = value;
@@ -34,11 +38,16 @@ export class SignupPage {
   }
 
   doSignup() {
+    const loading = this.loadingCtrl.create({
+      content: 'Please wait...'
+    });
+    loading.present();
     // Attempt to login in through our User service
     this.user.signup(this.account).subscribe((resp) => {
+      loading.dismiss();
       this.navCtrl.push(MainPage);
     }, (err) => {
-
+      loading.dismiss();
       this.navCtrl.push(MainPage);
 
       // Unable to sign up

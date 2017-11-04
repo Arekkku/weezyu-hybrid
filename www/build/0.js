@@ -20,25 +20,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var ListFriendPageModule = /** @class */ (function () {
+var ListFriendPageModule = (function () {
     function ListFriendPageModule() {
     }
-    ListFriendPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_3__list_friend__["a" /* ListFriendPage */],
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__list_friend__["a" /* ListFriendPage */]),
-                __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__["b" /* TranslateModule */].forChild()
-            ],
-            exports: [
-                __WEBPACK_IMPORTED_MODULE_3__list_friend__["a" /* ListFriendPage */]
-            ]
-        })
-    ], ListFriendPageModule);
     return ListFriendPageModule;
 }());
+ListFriendPageModule = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* NgModule */])({
+        declarations: [
+            __WEBPACK_IMPORTED_MODULE_3__list_friend__["a" /* ListFriendPage */],
+        ],
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__list_friend__["a" /* ListFriendPage */]),
+            __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__["b" /* TranslateModule */].forChild()
+        ],
+        exports: [
+            __WEBPACK_IMPORTED_MODULE_3__list_friend__["a" /* ListFriendPage */]
+        ]
+    })
+], ListFriendPageModule);
 
 //# sourceMappingURL=list-friend.module.js.map
 
@@ -71,7 +71,7 @@ var Type;
     Type[Type["Friend"] = 1] = "Friend";
     Type[Type["Conversations"] = 2] = "Conversations";
 })(Type || (Type = {}));
-var SearchFriendsPage = /** @class */ (function () {
+var SearchFriendsPage = (function () {
     function SearchFriendsPage(navCtrl, items, modalCtrl, user, toastCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.items = items;
@@ -147,14 +147,14 @@ var SearchFriendsPage = /** @class */ (function () {
             item: item
         });
     };
-    SearchFriendsPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-search-friends',template:/*ion-inline-start:"C:\Users\a.chenevier\Documents\weezyu-hybrid\src\pages\search-friends\search-friends.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>{{ \'SEARCH_TITLE\' | translate }}</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content>\n\n  <ion-fab style="margin-right:1%; margin-top:0.2%;"right  (click)="search()">\n\n    <button ion-fab><ion-icon name="search"></ion-icon></button>\n\n  </ion-fab>\n\n  <ion-item>\n\n      <ion-label floating>Fullname</ion-label>\n\n      <ion-input type="text" [(ngModel)]="fullname"></ion-input>\n\n  </ion-item>\n\n  <ion-list>\n\n    <button ion-item *ngFor="let item of currentItems">\n\n      <ion-avatar item-start>\n\n        <img [src]="item.picture" />\n\n      </ion-avatar>\n\n      <h2>{{item.fullname}}</h2>\n\n      <p>{{item.description}}</p>\n\n      <ion-note item-end *ngIf="item.note">{{item.note}}</ion-note>\n\n      <button (click)="itemAction(item._id)" item-end style="margin-right:1%; margin-top:0.2%;">+</button>\n\n\n\n    </button>\n\n\n\n  </ion-list>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\a.chenevier\Documents\weezyu-hybrid\src\pages\search-friends\search-friends.html"*/
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_providers__["b" /* Items */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */], __WEBPACK_IMPORTED_MODULE_2__providers_providers__["c" /* User */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
-    ], SearchFriendsPage);
     return SearchFriendsPage;
 }());
+SearchFriendsPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-search-friends',template:/*ion-inline-start:"/Users/arekkku/weezyu-hybrid/src/pages/search-friends/search-friends.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{ \'SEARCH_TITLE\' | translate }}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n  <ion-fab style="margin-right:1%; margin-top:0.2%;"right  (click)="search()">\n    <button ion-fab><ion-icon name="search"></ion-icon></button>\n  </ion-fab>\n  <ion-item>\n      <ion-label floating>Fullname</ion-label>\n      <ion-input type="text" [(ngModel)]="fullname"></ion-input>\n  </ion-item>\n  <ion-list>\n    <button ion-item *ngFor="let item of currentItems">\n      <ion-avatar item-start>\n        <img [src]="item.picture" />\n      </ion-avatar>\n      <h2>{{item.fullname}}</h2>\n      <p>{{item.description}}</p>\n      <ion-note item-end *ngIf="item.note">{{item.note}}</ion-note>\n      <button (click)="itemAction(item._id)" item-end style="margin-right:1%; margin-top:0.2%;">+</button>\n\n    </button>\n\n  </ion-list>\n\n</ion-content>\n'/*ion-inline-end:"/Users/arekkku/weezyu-hybrid/src/pages/search-friends/search-friends.html"*/
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_providers__["b" /* Items */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ModalController */], __WEBPACK_IMPORTED_MODULE_2__providers_providers__["c" /* User */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
+], SearchFriendsPage);
 
 //# sourceMappingURL=search-friends.js.map
 
@@ -183,7 +183,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var ListFriendPage = /** @class */ (function () {
+var ListFriendPage = (function () {
     function ListFriendPage(navCtrl, items, modalCtrl, user, toastCtrl) {
         this.navCtrl = navCtrl;
         this.items = items;
@@ -205,6 +205,19 @@ var ListFriendPage = /** @class */ (function () {
             // Unable to log in
             var toast = _this.toastCtrl.create({
                 message: "Erreur à la recuperation des conversations",
+                duration: 3000,
+                position: 'top'
+            });
+            toast.present();
+        });
+    };
+    ListFriendPage.prototype.delete_friend = function (id) {
+        var _this = this;
+        this.user.deleteFriend(id).subscribe(function (resp) {
+            _this.ionViewDidLoad();
+        }, function (err) {
+            var toast = _this.toastCtrl.create({
+                message: "Impossible de supprimer l'ami",
                 duration: 3000,
                 position: 'top'
             });
@@ -244,14 +257,14 @@ var ListFriendPage = /** @class */ (function () {
             item: item
         });
     };
-    ListFriendPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-list-friend',template:/*ion-inline-start:"C:\Users\a.chenevier\Documents\weezyu-hybrid\src\pages\list-master\list-friend.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>{{ \'LIST_MASTER_TITLE\' | translate }}</ion-title>\n\n\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="addItem()">\n\n        <ion-icon name="add"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content>\n\n\n\n  <ion-list>\n\n    <ion-item-sliding *ngFor="let item of currentItems">\n\n      <button ion-item (click)="openItem(item)">\n\n        <ion-avatar item-start>\n\n          <img [src]="item.picture" />\n\n        </ion-avatar>\n\n        <h2>{{item.firstname}}</h2>\n\n        <p>{{item.lastname}}</p>\n\n        <ion-note item-end *ngIf="item.note">{{item.note}}</ion-note>\n\n      </button>\n\n\n\n      <ion-item-options>\n\n        <button ion-button color="danger" (click)="deleteItem(item)">\n\n          {{ \'DELETE_BUTTON\' | translate }}\n\n        </button>\n\n      </ion-item-options>\n\n    </ion-item-sliding>\n\n  </ion-list>\n\n</ion-content>\n\n<ion-content>\n\n <!-- Real floating action button, fixed. It will not scroll with the content -->\n\n <ion-fab right bottom (click)="addFriend()">\n\n   <button ion-fab>+</button>\n\n </ion-fab>\n\n <ion-fab center bottom (click)="ionViewDidLoad()">\n\n   <button ion-fab><ion-icon name="refresh"></ion-icon></button>\n\n </ion-fab>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\a.chenevier\Documents\weezyu-hybrid\src\pages\list-master\list-friend.html"*/
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_providers__["b" /* Items */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */], __WEBPACK_IMPORTED_MODULE_2__providers_providers__["c" /* User */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ToastController */]])
-    ], ListFriendPage);
     return ListFriendPage;
 }());
+ListFriendPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-list-friend',template:/*ion-inline-start:"/Users/arekkku/weezyu-hybrid/src/pages/list-friend/list-friend.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{ \'LIST_MASTER_FRIEND\' | translate }}</ion-title>\n\n    <ion-buttons end>\n      <button ion-button icon-only (click)="addItem()">\n        <ion-icon name="add"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n\n  <ion-list>\n    <ion-item-sliding *ngFor="let item of currentItems">\n      <button ion-item>\n        <ion-avatar item-start>\n          <img [src]="item.picture" />\n        </ion-avatar>\n        <h2>{{item.firstname}}</h2>\n        <p>{{item.lastname}}</p>\n        <button (click)="delete_friend(item._id)" item-end style="margin-right:1%; margin-top:0.2%;">x</button>\n        <ion-note item-end *ngIf="item.note">{{item.note}}</ion-note>\n      </button>\n\n      <ion-item-options>\n        <button ion-button color="danger" (click)="deleteItem(item)">\n          {{ \'DELETE_BUTTON\' | translate }}\n        </button>\n      </ion-item-options>\n    </ion-item-sliding>\n  </ion-list>\n  <ion-fab right bottom (click)="addFriend()">\n    <button ion-fab>+</button>\n  </ion-fab>\n  <ion-fab center bottom (click)="ionViewDidLoad()">\n    <button ion-fab><ion-icon name="refresh"></ion-icon></button>\n  </ion-fab>\n</ion-content>\n'/*ion-inline-end:"/Users/arekkku/weezyu-hybrid/src/pages/list-friend/list-friend.html"*/
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_providers__["b" /* Items */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ModalController */], __WEBPACK_IMPORTED_MODULE_2__providers_providers__["c" /* User */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */]])
+], ListFriendPage);
 
 //# sourceMappingURL=list-friend.js.map
 

@@ -50,7 +50,7 @@ export class User {
       } else {
       }
     }, err => {
-      console.error('ERROR', err);
+      console.error('ERROR', "" + err);
     });
 
     return seq;
@@ -66,13 +66,16 @@ export class User {
   signup(accountInfo: any) {
     let seq = this.api.post('users', accountInfo).share();
 
+
     seq.subscribe((res: any) => {
+      this._user = res.user;
+      this.token = "Bearer " + res.token;
       // If the API returned a successful response, mark the user as logged in
       if (res.status == 'success') {
         this._loggedIn(res);
       }
     }, err => {
-      console.error('ERROR', err);
+      console.error('ERROR', "" + err);
     });
 
     return seq;
@@ -103,7 +106,7 @@ export class User {
       // If the API returned a successful response, mark the user as logged in
 
     }, err => {
-      console.error('ERROR', err);
+      console.error('ERROR', "" + err);
     });
 
     return seq;
@@ -121,7 +124,7 @@ export class User {
       // If the API returned a successful response, mark the user as logged in
 
     }, err => {
-      console.error('ERROR', err);
+      console.error('ERROR', "" + err);
     });
 
     return seq;
@@ -222,4 +225,20 @@ export class User {
 
     return seq;
   }
+
+  deleteFriend(params:string){
+      let reqOpts = {
+        headers: new HttpHeaders().set("Authorization", this.token),
+        body: {"friend_id": params}
+      };
+      let seq = this.api.delete('users/me/friends/', reqOpts).share();
+      seq.subscribe((res: any) => {
+        console.log(res);
+        // If the API returned a successful response, mark the user as logged in
+      }, err => {
+        console.error('ERROR', err);
+      });
+
+      return seq;
+    }
 }

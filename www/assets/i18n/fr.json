@@ -5,9 +5,9 @@
   "LOGIN": "Connexion",
   "SIGNUP": "Inscription",
 
-  "TAB1_TITLE": "Items",
-  "TAB2_TITLE": "Recherche",
-  "TAB3_TITLE": "Paramètres",
+  "TAB1_TITLE": "Amis",
+  "TAB2_TITLE": "Amis en attente",
+  "TAB3_TITLE": "Conversation",
 
   "MAP_TITLE": "Carte",
 
@@ -37,7 +37,10 @@
   "SIGNUP_ERROR": "Inscription impossible. Veuillez vérifier les informations de votre compte et réessayer.",
   "SIGNUP_BUTTON": "Inscription",
 
-  "LIST_MASTER_TITLE": "Items",
+  "LIST_MASTER_TITLE": "Amis",
+  "LIST_MASTER_TITLE": "Amis en attente",
+  "LIST_MASTER_TITLE": "Conversation",
+
 
   "ITEM_CREATE_TITLE": "Nouvel item",
   "ITEM_CREATE_CHOOSE_IMAGE": "Ajouter une image",
