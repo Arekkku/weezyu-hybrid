@@ -26,7 +26,7 @@ Le mot de passe pour ces comptes est 123456
 
 ## L'API
 
-Notre projet utilise l'API de notre projet d'EIP Weezyu, du coup toutes les requêtes utilisées sont celles qui sont en relation avec notre API, si jamais vous avez besoin voici la documentation de notre API: https://pprod.apidoc.weezyu.com/
+Notre projet utilise l'API de notre projet d'EIP Weezyu, du coup toutes les requêtes utilisées sont celles qui sont en relation avec notre API, l'API est encore en développement il se peut qu'il y ait encore quelques incohérences ou bugs, si jamais vous avez besoin voici la documentation de notre API: https://pprod.apidoc.weezyu.com/
 
 ## <a name="getting-started"></a>Authentification
 
