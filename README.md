@@ -9,14 +9,24 @@ Weezyu hybrid est une version hybrid de l'application Weezyu.
 Cette version simplifiée et developpée via Ionic a pour but de montrer le système de tchat et d'amis de l'application.
 Ainsi cette application va avoir comme fonctionnalité le fait de pouvoir se connecter à son compte Weezyu accéder à ses amis, pouvoir les rechercher et enfin pouvoir communiquer avec eux via le système de tchat.
 
+### IMPORTANT
+
+Il y a des users avec l'adresse email arekuX@voila.fr (X a remplacer par un chiffre de 2 à 7) qui peuvent être utilisé car ils possèdent des noms et prénoms pour faire les tests (en plus du compte de base qui est raphael.teyssandier@gmail.com).
+Le mot de passe pour ces comptes est 123456
+
 ## Table des matières
 
-1. Authentification
-2. Amis
-3. Recherche
-4. Amis en attente
-5. Tchat
-6. Les plus
+1. L'API
+2. Authentification
+3. Amis
+4. Recherche
+5. Amis en attente
+6. Tchat
+7. Les plus
+
+## L'API
+
+Notre projet utilise l'API de notre projet d'EIP Weezyu, du coup toutes les requêtes utilisées sont celles qui sont en relation avec notre API, l'API est encore en développement il se peut qu'il y ait encore quelques incohérences ou bugs, si jamais vous avez besoin voici la documentation de notre API: https://pprod.apidoc.weezyu.com/
 
 ## <a name="getting-started"></a>Authentification
 
