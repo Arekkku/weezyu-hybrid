@@ -5,6 +5,8 @@ import { Item } from '../../models/item';
 import { Items } from '../../providers/providers';
 import { User } from '../../providers/providers';
 import * as Enums from '../search-friends/search-friends';
+import { LoadingController } from 'ionic-angular';
+
 
 @IonicPage()
 @Component({
@@ -14,14 +16,23 @@ import * as Enums from '../search-friends/search-friends';
 export class ListFriendPage {
   currentItems: any;
 
-  constructor(public navCtrl: NavController, public items: Items, public modalCtrl: ModalController, public user: User, public toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, public items: Items, public modalCtrl: ModalController, public user: User, public toastCtrl: ToastController, public loadingCtrl: LoadingController) {
   }
 
   /**
    * The view loaded, let's query our items for the list
    */
   ionViewDidLoad() {
+    let loading = this.loadingCtrl.create({
+    spinner: 'bubbles',
+    content: `
+      <div class="custom-spinner-container">
+        <div class="custom-spinner-box">Your friends are comming</div>
+      </div>`
+  });
+  loading.present();
     this.user.getFriends("").subscribe((resp) => {
+      loading.dismiss();
       if (resp != null)
       {
       this.currentItems = resp['friends'];

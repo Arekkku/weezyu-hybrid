@@ -4,6 +4,8 @@ import { IonicPage, ModalController, NavController, ToastController, NavParams }
 import { Item } from '../../models/item';
 import { Items } from '../../providers/providers';
 import { User } from '../../providers/providers';
+import { LoadingController } from 'ionic-angular';
+
 
 export enum Type{
   Friend = 1,
@@ -21,7 +23,7 @@ export class SearchFriendsPage {
   fullname: any;
   currentType: Type;
 
-  constructor(public navCtrl: NavController, public items: Items, public modalCtrl: ModalController, public user: User, public toastCtrl: ToastController, private navParams: NavParams) {
+  constructor(public navCtrl: NavController, public items: Items, public modalCtrl: ModalController, public user: User, public toastCtrl: ToastController, private navParams: NavParams, public loadingCtrl: LoadingController) {
     this.currentType = navParams.get("type");
     console.log(this.currentType);
   }
@@ -40,8 +42,17 @@ export class SearchFriendsPage {
   }
 
   search(){
+    let loading = this.loadingCtrl.create({
+    spinner: 'bubbles',
+    content: `
+      <div class="custom-spinner-container">
+        <div class="custom-spinner-box">Your friends are coming</div>
+      </div>`
+  });
+  loading.present();
     console.log(this.fullname);
     this.user.search(this.fullname).subscribe((resp) => {
+      loading.dismiss();
       if (resp != null)
       {
       this.currentItems = resp;
@@ -73,7 +84,7 @@ export class SearchFriendsPage {
       this.user.createConversation(id).subscribe((resp) => {
       }, (err) => {
         let toast = this.toastCtrl.create({
-          message: "Impossible d'ajouter un ami",
+          message: "Impossible de créer une conversation",
           duration: 3000,
           position: 'top'
         });

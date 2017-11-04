@@ -11,14 +11,14 @@
 
   "MAP_TITLE": "Carte",
 
-  "TUTORIAL_SLIDE1_TITLE": "Bienvenue dans le kit de démarrage Ionic Super Starter",
-  "TUTORIAL_SLIDE1_DESCRIPTION": "<b>Ionic Super Starter</b> est un kit complet pour démarrer sur Ionic. Il repose sur les meilleures pratiques et implémente de nombreux types de pages.",
+  "TUTORIAL_SLIDE1_TITLE": "Bienvenue sur l'application weezyu-hybrid",
+  "TUTORIAL_SLIDE1_DESCRIPTION": "<b>weezyu-hybrid</b> est un projet de developement d'une application hybride du projet de base Weezyu qui est une plateforme de mise en relation d'utilisateurs qui possèdent une passion commune dans le domaine du sport",
 
-  "TUTORIAL_SLIDE2_TITLE": "Comment utiliser le Super Starter",
-  "TUTORIAL_SLIDE2_DESCRIPTION": "Assemblez les types de pages désirés et supprimez les autres. Le kit inclut plusieurs mises en page courantes d’applications mobiles, comme les pages de connexion et d’inscription, les onglets et cette page de tutoriel.",
+  "TUTORIAL_SLIDE2_TITLE": "Comment utiliser le weezyu-hybrid",
+  "TUTORIAL_SLIDE2_DESCRIPTION": "Les fonctionnalités de cette application sont relativement simple, celle-ci permet de pouvoir voir sa liste d'amis, en rechercher de nouveaux pour les ajouter, voir la liste d'attente de ses amis et la liste des conversations pour ceux qui en ont d'actifs.",
 
   "TUTORIAL_SLIDE3_TITLE": "Pour commencer",
-  "TUTORIAL_SLIDE3_DESCRIPTION": "Si vous avez besoin d’aide, consultez le README du Super Starter pour un tutoriel complet.",
+  "TUTORIAL_SLIDE3_DESCRIPTION": "Vous pouvez vous créer un compte ainsi que vous vous identifier avec le compte de votre choix et voir vos différents amis dès maintenant !",
 
   "SETTINGS_TITLE": "Paramètres",
   "SETTINGS_OPTION1": "Option 1",
@@ -37,9 +37,9 @@
   "SIGNUP_ERROR": "Inscription impossible. Veuillez vérifier les informations de votre compte et réessayer.",
   "SIGNUP_BUTTON": "Inscription",
 
-  "LIST_MASTER_TITLE": "Amis",
-  "LIST_MASTER_TITLE": "Amis en attente",
-  "LIST_MASTER_TITLE": "Conversation",
+  "LIST_MASTER_FRIEND": "Amis",
+  "LIST_MASTER_PENDING": "Amis en attente",
+  "LIST_MASTER_CONV": "Conversation",
 
 
   "ITEM_CREATE_TITLE": "Nouvel item",
