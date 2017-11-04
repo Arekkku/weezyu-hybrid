@@ -11,12 +11,17 @@ Ainsi cette application va avoir comme fonctionnalité le fait de pouvoir se con
 
 ## Table des matières
 
-1. Authentification
-2. Amis
-3. Recherche
-4. Amis en attente
-5. Tchat
-6. Les plus
+1. L'API
+2. Authentification
+3. Amis
+4. Recherche
+5. Amis en attente
+6. Tchat
+7. Les plus
+
+## L'API
+
+Notre projet utilise l'API de notre projet d'EIP Weezyu, du coup toutes les requêtes utilisées sont celles qui sont en relation avec notre API, si jamais vous avez besoin voici la documentation de notre API: https://pprod.apidoc.weezyu.com/
 
 ## <a name="getting-started"></a>Authentification
 
